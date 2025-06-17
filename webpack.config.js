@@ -67,7 +67,8 @@ const webpackBaseConfig = {
       '@constants': resolve('src/constants'),
       '@connections': resolve('src/connections'),
       '@abis': resolve('src/abis'),
-      '@types': resolve('src/types'),
+      '@mTypes': resolve('src/mTypes'),
+      '@routes': resolve('src/routes'),
     },
     extensions: ['.js', '.ts', '.tsx', '.jsx', '.css'],
     fallback: {

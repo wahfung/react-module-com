@@ -3,7 +3,7 @@ import { RouteObject } from 'react-router-dom';
 
 import Loading from '@components/common/Loading';
 import PageNotFoundView from '@components/common/PageNotFoundView';
-import MainLayout from '@/layouts/Layout';
+import MainLayout from '@layouts/Layout';
 import TextGeneration from '@pages/TextGeneration';
 import Home from '@pages/Home';
 import Dapp from '@pages/Dapp';

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Wallet, Home } from 'lucide-react';
-import { mainRoute } from '@/routes/index';
+import { Wallet } from 'lucide-react';
+import { mainRoute } from '@routes/index';
 
 const Header = () => {
   const [isWalletConnected, setIsWalletConnected] = useState(false);

@@ -1,4 +1,4 @@
-import { MetaCoin, MetaCoin__factory } from '@/types/ethers-contracts';
+import { MetaCoin, MetaCoin__factory } from '@mTypes/ethers-contracts';
 import MetaCoinABI from '@abis/MetaCoin.json';
 import { BrowserProvider } from 'ethers';
 // import { Contract } from 'ethers';
