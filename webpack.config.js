@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const argv = require('yargs-parser')(process.argv.slice(2));
 const { resolve } = require('path');
@@ -9,7 +10,6 @@ const mode = argv.mode || 'development';
 const modeflag = mode === 'production' ? true : false;
 
 const mergeConfig = require(`./configs/webpack.${mode}.js`);
-
 const webpackBaseConfig = {
   mode,
   entry: {
@@ -51,6 +51,10 @@ const webpackBaseConfig = {
       ignoreOrder: false,
     }),
     new ThemedProgressPlugin(),
+    new webpack.DefinePlugin({
+      __NODE_ENV__: JSON.stringify(mode),
+      __API_URL__: JSON.stringify(modeflag ? '' : 'http://localhost:8081'),
+    }),
   ],
   resolve: {
     alias: {

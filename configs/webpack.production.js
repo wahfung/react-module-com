@@ -30,6 +30,10 @@ module.exports = {
       }),
     ],
   },
+  // external: {
+  //   'react': 'React',
+  //   'react-dom': 'ReactDom',
+  // },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',

@@ -1,7 +1,6 @@
 import { MetaCoin, MetaCoin__factory } from '@mTypes/ethers-contracts';
 import MetaCoinABI from '@abis/MetaCoin.json';
 import { BrowserProvider } from 'ethers';
-// import { Contract } from 'ethers';
 import { useEffect, useState } from 'react';
 
 declare global {
@@ -13,6 +12,8 @@ const CONTRACT_ADDRESS = MetaCoinABI.networks['11155111'].address;
 console.log('🌺🌺🌺🌺🌺🌺🌺🌺🌺 ', CONTRACT_ADDRESS);
 const DappPage = () => {
   const [contract, setContract] = useState<MetaCoin | null>(null);
+  const [result, setResult] = useState<bigint>();
+
   // const contractInstance = new Contract(
   //   CONTRACT_ADDRESS,
   //   MetaCoinABI.abi,
@@ -36,9 +37,9 @@ const DappPage = () => {
   useEffect(() => {
     const callSayHi = async () => {
       if (contract) {
-        const result = await contract.getContractETHBalance();
+        const res = await contract.getContractETHBalance();
 
-        console.log(result, 111);
+        setResult(res);
       }
     };
     callSayHi();
@@ -46,7 +47,10 @@ const DappPage = () => {
 
   return (
     <>
-      <h1>Dapptest</h1>
+      <h1>
+        Dapptest
+        {result}
+      </h1>
     </>
   );
 };
