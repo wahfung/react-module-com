@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { config } from '../../../configs/env';
-console.log(config);
+
 const HomePage = () => {
   const [data, setData] = useState({});
 
   const getList = async () => {
     try {
-      const response = await fetch(`http://localhost:8081/api/list`);
+      const response = await fetch(`${config.API_URL}/api/list`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
